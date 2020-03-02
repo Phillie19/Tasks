@@ -1,4 +1,4 @@
-# A joerney to software engineering
+# A journey to software engineering
 
 Я решил стать разработчиком ПО на C++. Это репозиторий — история моего пути в реальном времени.
 Срок — полгода
