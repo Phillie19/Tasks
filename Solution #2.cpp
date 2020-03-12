@@ -1,17 +1,18 @@
 class Solution {
 public:
-	vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-		vector <int> sort(101);
-		vector <int> output(nums.size());
-
-		for (int i = 0; i < nums.size(); i++) {
-			sort[nums[i]] += 1;
+    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+   	vector <int> sorted(101);
+    vector <int>:: iterator it;
+	vector <int> output;
+			for (auto a : nums) {
+            sorted[a]++;
 		}
-		for (int i = 0; i < nums.size(); i++) {
-			for (int j = 0; j < nums[i]; j++) {
-				output[i] += sort[j];
+        for (int i = 1; i <= 100; i++) {
+            sorted[i] += sorted[i-1];
+        }
+		for (auto a : nums) {
+           	output.push_back(sorted[a-1]);
 			}
-		}
 		return output;
 	}
 };
