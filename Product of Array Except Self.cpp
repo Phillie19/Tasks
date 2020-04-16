@@ -1,22 +1,14 @@
 class Solution {
 public:
-	vector<int> productExceptSelf(vector<int>& nums) {
-		int n = nums.size();
-		vector<int> left(n);
-		vector<int> right(n);
-		vector<int> output(n);
-
-		left[0] = 1;
-		for (int i = 1; i < n; i++) {
-			left[i] = nums[i - 1] * left[i - 1];
-		}
-		right[n - 1] = 1;
-		for (int i = n - 2; i >= 0; i--) {
-			right[i] = nums[i + 1] * right[i + 1];
-		}
-		for (int i = 0; i < n; i++) {
-			output[i] = left[i] * right[i];
-		}
-		return output;
-	}
+    string stringShift(string s, vector<vector<int>>& shift) {
+        int len = s.size();
+        int pos = 0;
+        for (auto i: shift) {
+            pos = (i[0] == 0) ? pos - i[1] : pos + i[1];
+        }
+        pos = (pos > 0) ? len - pos % len  : abs(pos) % len;
+        rotate(s.begin(), s.begin()+pos, s.end());    
+        
+        return s;
+    }
 };
