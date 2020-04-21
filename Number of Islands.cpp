@@ -13,7 +13,7 @@ public:
 		return islcnt;
 	}
 	void sinkIsland(vector<vector<char>>& grid, int x, int y) {
-		if (grid[y][x] == '0') {
+		if (grid[y][x] == '1') {
 			grid[y][x] = '0';
 			if (y > 0) sinkIsland(grid, x, y - 1);
 			if (y < grid.size() - 1) sinkIsland(grid, x, y + 1);
