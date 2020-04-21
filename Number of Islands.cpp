@@ -1,5 +1,5 @@
 class Solution {
-public:
+public: 
 	int numIslands(vector<vector<char>>& grid) {
 		int islcnt = 0;
 		for (int y = 0; y < grid.size(); y++) {
